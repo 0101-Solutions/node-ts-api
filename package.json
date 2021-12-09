@@ -1,0 +1,40 @@
+{
+  "name": "flutter-api",
+  "version": "1.0.0",
+  "description": "This is a starter API that can be used as a starter for your mobile applications.",
+  "main": "app.js",
+  "scripts": {
+    "dev": "node_modules/.bin/ts-node-dev --respawn --notify false --prefer-ts --ignore-watch node_modules -- src/app.ts ",
+    "test": "mocha --require ts-node/register --watch-extensions ts 'tests/**/*.spec.ts' --timeout 40000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0101-Solutions/node-ts-api.git"
+  },
+  "keywords": [
+    "NodeJS",
+    "Express",
+    "TypeScript",
+    "Flutter",
+    "App",
+    "API."
+  ],
+  "author": "0101 Solutions",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/0101-Solutions/node-ts-api/issues"
+  },
+  "homepage": "https://github.com/0101-Solutions/node-ts-api#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "pg": "^8.7.1",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.2.41"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/node": "^16.11.12",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.5.2"
+  }
+}

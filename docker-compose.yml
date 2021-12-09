@@ -1,23 +1,45 @@
 version: '3.8'
 
 services:
-  pgdb:
+  postgres:
     
-    container_name: pgdb_node
+    container_name: postgres_node
     
     image: postgres
     
     restart: always
     
     ports:
-      - 5432:5432
-    
-    logging:
-      options:
-        max-size: 10m
-        max-file: "3"
+      - "5432:5432"
     
     environment:
       - POSTGRES_DB=postgres
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DATABASE=node_sample
+
+  pgadmin:
+
+    container_name: pgadmin4
+
+    image: dpage/pgadmin4
+
+    restart: always
+
+    ports:
+      - "5050:80"
+
+    networks:
+      - postgres
+    
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@email.com
+      PGADMIN_DEFAULT_PASSWORD: pass123
+      PGADMIN_CONFIG_SERVER_MODE: 'False'
+
+    links:
+      - "postgres:pgsql-server"
+
+networks:
+  postgres:
+    driver: bridge

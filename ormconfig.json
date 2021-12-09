@@ -4,7 +4,7 @@
     "port": 5432,
     "username": "postgres",
     "password": "postgres",
-    "database": "node-sample",
+    "database": "node_sample",
     "synchronize": true,
     "logging": false,
     "entities": [
